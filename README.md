@@ -16,8 +16,8 @@ Thanks to equally spaced energy levels, the wave function exhibits **perfect per
 - Exact analytic solution using Hermite polynomials
 - real + imaginary parts plotted in real time
 - Automatically saves a  GIF
-
+the theory is given here (quantum_harmonic_oscillator_time_evolution.pdf)
 ## Default initial state (feel free to change!)
 ```python
-the theory is given here (quantum_harmonic_oscillator_time_evolution.pdf)
+
 ψ(0) ∝ |0⟩ + 3|2⟩ + 7|3⟩
