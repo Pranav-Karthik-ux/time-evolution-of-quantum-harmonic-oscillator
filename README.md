@@ -8,6 +8,8 @@
 
 
 ![The theory is given here](theory/quantum_harmonic_oscillator_time_evolution.pdf).
+
+
 **A single-file, zero-dependency (beyond standard libraries) demonstration of exact quantum time evolution in the harmonic oscillator.**
 
 Watch any superposition of energy eigenstates evolve analytically — no numerical integration, no approximations.  
