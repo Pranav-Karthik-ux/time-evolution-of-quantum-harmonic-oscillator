@@ -19,8 +19,6 @@ Thanks to equally spaced energy levels, the wave function exhibits **perfect per
 - Splitting, breathing, interference, and perfect reconstruction of the initial state
 - Exact analytic solution using Hermite polynomials
 - real + imaginary parts plotted in real time
-- Automatically saves a  GIF
-
 ## Default initial state (feel free to change!)
 ```python
 
