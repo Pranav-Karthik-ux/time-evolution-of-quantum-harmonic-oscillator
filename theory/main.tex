@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+
+\title{Time Evolution of the Quantum Harmonic Oscillator}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle{}
+\section{The Quantum Harmonic Oscillator}
+
+The Hamiltonian of the one-dimensional quantum harmonic oscillator is
+\begin{align}
+\hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2} m \omega^2 \hat{x}^2 = \hbar \omega \left( \hat{a}^\dagger \hat{a} + \frac{1}{2} \right),
+\end{align}
+where $\hat{a}$ and $\hat{a}^\dagger$ are the lowering and raising operators:
+\begin{align}
+\hat{a} = \sqrt{\frac{m\omega}{2\hbar}} \left( \hat{x} + \frac{i}{m\omega} \hat{p} \right), \quad
+\hat{a}^\dagger = \sqrt{\frac{m\omega}{2\hbar}} \left( \hat{x} - \frac{i}{m\omega} \hat{p} \right).
+\end{align}
+
+The energy eigenvalues and eigenstates (number states) are
+\begin{align}
+\hat{H} \ket{n} &= E_n \ket{n}, \qquad n = 0,1,2,\dots \\
+E_n &= \hbar \omega \left( n + \frac{1}{2} \right).
+\end{align}
+
+\section{Position-Space Wave Functions}
+
+The normalized energy eigenfunctions in position representation are
+\begin{align}
+\psi_n(x) &= \bra{n}x\ket{n} = \frac{1}{\sqrt{2^n n!}} \left( \frac{m\omega}{\pi \hbar} \right)^{1/4} 
+H_n(\xi) e^{-\xi^2/2},
+\end{align}
+where $\xi = \sqrt{\frac{m\omega}{\hbar}} x$ is the dimensionless coordinate, and $H_n(\xi)$ are the (physicists’) Hermite polynomials:
+\begin{align}
+H_n(\xi) = (-1)^n e^{\xi^2} \frac{d^n}{d\xi^n} e^{-\xi^2}.
+\end{align}
+
+It is common to define the characteristic length
+\begin{align}
+x_0 = \sqrt{\frac{\hbar}{m\omega}},
+\end{align}
+so that $\xi = x/x_0$ and the wave functions can be written as
+\begin{align}
+\psi_n(x) = \frac{1}{\sqrt{2^n n! \, x_0 \sqrt{\pi}}} \, H_n\!\left( \frac{x}{x_0} \right) 
+\exp\!\left( -\frac{x^2}{2x_0^2} \right).
+\end{align}
+
+\section{Time Evolution of Energy Eigenstates}
+
+Since $\ket{n}$ are energy eigenstates, their time evolution is simply a phase factor:
+\begin{align}
+\ket{n(t)} &= e^{-i E_n t / \hbar} \ket{n(0)} = e^{-i \omega (n + 1/2) t} \ket{n}.
+\end{align}
+Thus, in position space:
+\begin{align}
+\psi_n(x,t) &= e^{-i (n + 1/2) \omega t} \psi_n(x).
+\end{align}
+
+\section{General State and Time Evolution}
+
+Any state can be expanded in the energy basis:
+\begin{align}
+\ket{\psi(0)} = \sum_{n=0}^\infty c_n \ket{n}, \qquad \sum_{n=0}^\infty \abs{c_n}^2 = 1.
+\end{align}
+The time-evolved state is
+\begin{align}
+\ket{\psi(t)} &= \sum_{n=0}^\infty c_n e^{-i (n + 1/2) \omega t} \ket{n}.
+\end{align}
+The position-space wave function is therefore
+\begin{align}
+\psi(x,t) &= \sum_{n=0}^\infty c_n \, e^{-i (n + 1/2) \omega t} \, \psi_n(x).
+\label{eq:general_time_evolution}
+\end{align}
+
+If the expansion is truncated to a finite number of terms (as done numerically), one simply sums over the included $n$ and renormalizes if necessary:
+\begin{align}
+\psi(x,t) \approx \frac{\sum_{n=0}^{N} c_n e^{-i (n + 1/2) \omega t} \psi_n(x)}
+{\sqrt{\sum_{n=0}^{N} \abs{c_n}^2}}.
+\end{align}
+
+
+\section{Summary of Formulas Used in the Python Code}
+
+The code you posted implements exactly Eq.~\eqref{eq:general_time_evolution} with coefficients
+\begin{align}
+c_0 = 1, \quad c_1 = 0, \quad c_2 = 3, \quad c_3 = 7
+\end{align}
+(then normalized inside the function), $x_0 = \sqrt{\hbar/(m\omega)}$, and time evolution factor $e^{-i(n+1/2)\omega t}$ for each term.
+
+The probability density $\abs{\psi(x,t)}^2$ shows a complicated but periodic motion with period $T = 2\pi/\omega$ (revival time, since all phases are multiples of $\omega t$).
+
+\end{document}
