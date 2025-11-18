@@ -5,7 +5,7 @@
 # Quantum Harmonic Oscillator – Exact Time Evolution & Revivals
 
 ![Animation preview](quantum_harmonic_oscillator.gif)
-
+![The theory is given here](quantum_harmonic_oscillator_time_evolution.pdf).
 **A single-file, zero-dependency (beyond standard libraries) demonstration of exact quantum time evolution in the harmonic oscillator.**
 
 Watch any superposition of energy eigenstates evolve analytically — no numerical integration, no approximations.  
@@ -16,7 +16,7 @@ Thanks to equally spaced energy levels, the wave function exhibits **perfect per
 - Exact analytic solution using Hermite polynomials
 - real + imaginary parts plotted in real time
 - Automatically saves a  GIF
-![The theory is given here](quantum_harmonic_oscillator_time_evolution.pdf).
+
 ## Default initial state (feel free to change!)
 ```python
 
