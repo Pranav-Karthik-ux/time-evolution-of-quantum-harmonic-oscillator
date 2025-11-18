@@ -5,6 +5,8 @@
 # Quantum Harmonic Oscillator – Exact Time Evolution & Revivals
 
 ![Animation preview](quantum_harmonic_oscillator.gif)
+
+
 ![The theory is given here](theory/quantum_harmonic_oscillator_time_evolution.pdf).
 **A single-file, zero-dependency (beyond standard libraries) demonstration of exact quantum time evolution in the harmonic oscillator.**
 
